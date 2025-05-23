@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "genie.spawnforcer.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"AllowNear",
+		"ForcedStart",
+		"ForcedStartChunk",
+		"PackJumpController"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
