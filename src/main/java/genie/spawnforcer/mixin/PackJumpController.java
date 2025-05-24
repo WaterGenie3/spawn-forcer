@@ -6,10 +6,9 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import net.minecraft.world.SpawnHelper;
-import net.minecraft.util.math.random.Random;
-
 import genie.spawnforcer.Settings;
+import net.minecraft.util.math.random.Random;
+import net.minecraft.world.SpawnHelper;
 
 /**
  * The x and z spread is controlled by the difference of 2 random.nextInt(6) calls by default,
@@ -34,7 +33,7 @@ public class PackJumpController {
 
     private static int outwardBias(Random random, int bound) {
         double base = random.nextDouble();
-        double bias = 0.2;
+        double bias = 0.25;
         int sample = (int) ((bound + 1) * Math.pow(base, bias));
         if (random.nextInt(2) == 0) {
             return sample;

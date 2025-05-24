@@ -4,26 +4,60 @@ Ad-hoc mod to help test pack spawning.
 
 ## Rules
 
-### Starting Coordinate
+### Starting Coordinate Per Dimension
 
 #### `/spawnforcer fixedStart {true, false}`
 
 Force spawning to start at the coordinate specified by `startCoords`.  
 If `startCoords` is not defined, it will default to (0,0,0).  
+This rule takes precedence over `fixedInChunk` and `fixedBottomY`.  
 Defaults to false.
 
 #### `/spawnforcer startCoords {x} {y} {z}`
 
 Sets the starting position for the spawn attempts to (x,y,z) when `fixedStart` is enabled.
 
+### Starting Coordinate Per Chunk
+
+#### `/spawnforcer fixedInChunk {true, false}`
+
+Force spawning to a fixed x and z chunk coordinate specified by `chunkStartX` and `chunkStartZ`.  
+The `fixedStart` option takes precedence over this rule.  
+Defaults to false.
+
+#### `/spawnforcer fixedBottomY {true, false}`
+
+Force spawning to sample from y value between `chunkBottomY` and heightmap + 1 instead of the world bottom to heightmap + 1.  
+The `fixedStart` option takes precedence over this rule.  
+Defaults to false.
+
+#### `/spawnforcer chunkStartX {x}`
+
+Sets the starting position to the specified chunk coordinate in the x axis when `fixedInChunk` is enabled.  
+Defaults to 0.
+
+#### `/spawnforcer chunkStartZ {z}`
+
+Sets the starting position to the specified chunk coordinate in the z axis when `fixedInChunk` is enabled.  
+Defaults to 0.
+
+#### `/spawnforcer chunkBottomY {y}`
+
+Sets the bottom y to the specified level instead of the world bottom when `fixedBottomY` is enabled.  
+Defaults to 0.
+
+### Starting Coordinate
+
 #### `/spawnforcer startSpreadX {n}`
 
-Adds a random amount to the x coordinate of `startCoords`, the amount will be uniformly distributed between -n and n (inclusive).  
+Adds a random amount to the x coordinate of the starting spawn position, the amount will be uniformly distributed between -n and n (inclusive).  
+This option works with either `fixedStart` or `fixedInChunk`.  
 Defaults to 0.
 
 #### `/spawnforcer startSpreadZ {n}`
 
-Adds a random amount to the z coordinate of `startCoords`, the amount will be uniformly distributed between -n and n (inclusive).  
+Adds a random amount to the z coordinate of the starting spawn position, the amount will be uniformly distributed between -n and n (inclusive).  
+This option works with either `fixedStart` or `fixedInChunk`.  
 Defaults to 0.
 
 ### Pack Spawning Jumps

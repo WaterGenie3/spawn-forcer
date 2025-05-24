@@ -1,8 +1,7 @@
 package genie.spawnforcer;
 
-import static carpet.api.settings.RuleCategory.FEATURE;
-
 import carpet.api.settings.Rule;
+import static carpet.api.settings.RuleCategory.FEATURE;
 
 public class Settings {
     public static final String SPAWN_CYCLE = "spawn_cycle";
@@ -15,6 +14,21 @@ public class Settings {
 
     @Rule(categories = {FEATURE, SPAWN_CYCLE})
     public static int startSpreadZ = 0;
+
+    @Rule(categories = {FEATURE, SPAWN_CYCLE})
+    public static boolean fixedInChunk = false;
+
+    @Rule(categories = {FEATURE, SPAWN_CYCLE})
+    public static boolean fixedBottomY = false;
+
+    @Rule(categories = {FEATURE, SPAWN_CYCLE})
+    public static int chunkStartX = 0;
+
+    @Rule(categories = {FEATURE, SPAWN_CYCLE})
+    public static int chunkStartZ = 0;
+
+    @Rule(categories = {FEATURE, SPAWN_CYCLE})
+    public static int chunkBottomY = 0;
 
     @Rule(categories = {FEATURE, SPAWN_CYCLE})
     public static boolean allowNear = false;
