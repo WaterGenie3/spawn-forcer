@@ -2,6 +2,8 @@
 
 Ad-hoc mod to help test pack spawning.
 
+Requires 1.21.5 carpet mod available [here](https://masa.dy.fi/maven/carpet/fabric-carpet/1.21.5-1.4.169%2Bv250325/) (the .jar file) at the time of writing this.
+
 ## Rules
 
 ### Starting Coordinate Per Dimension
@@ -17,6 +19,10 @@ Defaults to false.
 
 Sets the starting position for the spawn attempts to (x,y,z) when `fixedStart` is enabled.
 
+
+ - Example with `fixedStart true` and `startCoords 0 -63 0`:
+![](images/fixedStart-startCoords.gif)
+
 ### Starting Coordinate Per Chunk
 
 #### `/spawnforcer fixedInChunk {true, false}`
@@ -24,6 +30,9 @@ Sets the starting position for the spawn attempts to (x,y,z) when `fixedStart` i
 Force spawning to a fixed x and z chunk coordinate specified by `chunkStartX` and `chunkStartZ`.  
 The `fixedStart` option takes precedence over this rule.  
 Defaults to false.
+
+- Example with `fixedInChunk true`:
+![](images/fixedInChunk.png)
 
 #### `/spawnforcer fixedBottomY {true, false}`
 
@@ -60,7 +69,13 @@ Adds a random amount to the z coordinate of the starting spawn position, the amo
 This option works with either `fixedStart` or `fixedInChunk`.  
 Defaults to 0.
 
+- Example with `fixedInChunk true` and `startSpreadZ 1`:
+![](images/startSpreadXZ.png)
+
 ### Pack Spawning Jumps
+
+- Example default spread:
+![](images/pack-jump-default.gif)
 
 #### `/spawnforcer uniformJump {true, false}`
 
@@ -70,6 +85,8 @@ The `jumpSequenceX` rule takes precedence over the x component of this rule.
 The `jumpSequenceZ` rule takes precedence over the z component of this rule.  
 Defaults to false.
 
+![](images/pack-jump-uniform.gif)
+
 #### `/spawnforcer spreadJump {true, false}`
 
 Change each x and z jump to heavily favour values closer to -5 and 5.  
@@ -77,6 +94,8 @@ This rule overrides `uniformJump` rule.
 The `jumpSequenceX` rule takes precedence over the x component of this rule.  
 The `jumpSequenceZ` rule takes precedence over the z component of this rule.  
 Defualts to false.
+
+![](images/pack-jump-spread.gif)
 
 #### `/spawnforcer jumpSequenceX {n1...}`
 
@@ -89,6 +108,9 @@ This rule takes precedence over the x component of `uniformJump` and `spreadJump
 Force each z jump within a pack to follow the given sequence.  
 If the pack size is greater than the length of the sequence, the last number in the sequence will be repeated.  
 This rule takes precedence over the z component of `uniformJump` and `spreadJump`.  
+
+- Example with `fixedStart true`, `startCoords 0 -63 0`, `jumpSequenceZ 0`, `jumpSequenceX 1 1 1 5`:
+![](images/jumpSequence.gif)
 
 ### Misc.
 
