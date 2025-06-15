@@ -34,6 +34,9 @@ public class Settings {
     public static boolean allowNear = false;
 
     @Rule(categories = {FEATURE, SPAWN_CYCLE})
+    public static boolean noStartOnGildedBlackstone = false;
+
+    @Rule(categories = {FEATURE, SPAWN_CYCLE})
     public static String startCoords = "";
     public static boolean startCoordsIsValid = true;
     public static int startCoordsX = 0;

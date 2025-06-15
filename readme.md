@@ -102,12 +102,14 @@ Defualts to false.
 Force each x jump within a pack to follow the given sequence.  
 If the pack size is greater than the length of the sequence, the last number in the sequence will be repeated.  
 This rule takes precedence over the x component of `uniformJump` and `spreadJump`.  
+Defaults to nothing (empty string `""`).
 
 #### `/spawnforcer jumpSequenceZ {n1...}`
 
 Force each z jump within a pack to follow the given sequence.  
 If the pack size is greater than the length of the sequence, the last number in the sequence will be repeated.  
 This rule takes precedence over the z component of `uniformJump` and `spreadJump`.  
+Defaults to nothing (empty string `""`).
 
 - Example with `fixedStart true`, `startCoords 0 -63 0`, `jumpSequenceZ 0`, `jumpSequenceX 1 1 1 5`:
 ![](images/jumpSequence.gif)
@@ -118,3 +120,11 @@ This rule takes precedence over the z component of `uniformJump` and `spreadJump
 
 Allows spawning within 24 blocks of the players and the world spawn point.  
 Defaults to false.
+
+#### `/spawnforcer noStartOnGildedBlackstone {true, false}`
+
+Disable starting position that is directly on top of a gilded blackstone.  
+Defaults to false.
+
+This option is mainly to allow *spawning* on the platform, but disallow *starting* on the platform
+for pack-spawning testing purposes.

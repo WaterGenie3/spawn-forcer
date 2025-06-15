@@ -3,6 +3,7 @@
     "spawnforcer.rule.startSpreadX.desc": "Spread the starting x coordinate uniformly between the input x and -x. Defaults to 0. This option only works when fixedStart or fixedInChunk is on.",
     "spawnforcer.rule.startSpreadZ.desc": "Spread the starting z coordinate uniformly between the input z and -z. Defaults to 0. This option only works when fixedStart or fixedInChunk is on.",
     "spawnforcer.rule.allowNear.desc": "Allow mobs to spawn near the player and world spawn point (removes the 24 block restriction). Defaults to false.",
+    "spawnforcer.rule.noStartOnGildedBlackstone.desc": "Disable spawn attempts where the block below is a gilded blackstone. Defaults to false (allows spawn attempts on gilded blackstone).",
     "spawnforcer.rule.startCoords.desc": "The coordinate the spawn will start at when fixedStart is enabled. The setting must be 3 numbers separated by spaces. If there's any digits, the number will be rounded down. If the command fails to parse, it will default to the coordinate (0,0,0).",
     "spawnforcer.rule.fixedInChunk.desc": "Force the spawn on chunk coordinates x, z defined by chunkStartX and chunkStartZ options. Defaults to false. The fixedStart option takes precedence. Can work with fixedBottomY option.",
     "spawnforcer.rule.chunkStartX.desc": "The x chunk coordinate the spawn will start at when fixedInChunk is enabled. The number is clamped to 0-15 inclusive. Defaults to 0.",

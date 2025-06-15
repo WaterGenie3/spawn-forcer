@@ -6,7 +6,8 @@
 		"AllowNear",
 		"ForcedStart",
 		"ForcedStartChunk",
-		"PackJumpController"
+		"PackJumpController",
+		"StartChecker"
 	],
 	"injectors": {
 		"defaultRequire": 1
