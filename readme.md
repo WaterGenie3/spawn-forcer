@@ -37,6 +37,7 @@ Defaults to false.
 #### `/spawnforcer fixedBottomY {true, false}`
 
 Force spawning to sample from y value between `chunkBottomY` and heightmap + 1 instead of the world bottom to heightmap + 1.  
+If `chunkBottomY` is higher than heightmap + 1, the spawn fails.  
 The `fixedStart` option takes precedence over this rule.  
 Defaults to false.
 
@@ -60,17 +61,34 @@ Defaults to 0.
 #### `/spawnforcer startSpreadX {n}`
 
 Adds a random amount to the x coordinate of the starting spawn position, the amount will be uniformly distributed between -n and n (inclusive).  
-This option works with either `fixedStart` or `fixedInChunk`.  
+This option works when either `fixedStart` or `fixedInChunk` is on.  
 Defaults to 0.
 
 #### `/spawnforcer startSpreadZ {n}`
 
 Adds a random amount to the z coordinate of the starting spawn position, the amount will be uniformly distributed between -n and n (inclusive).  
-This option works with either `fixedStart` or `fixedInChunk`.  
+This option works when either `fixedStart` or `fixedInChunk` is on.  
 Defaults to 0.
 
 - Example with `fixedInChunk true` and `startSpreadZ 1`:
 ![](images/startSpreadXZ.png)
+
+#### `/spawnforcer packOffsetX {n}`
+
+Adds an offset n to the x coordinate to the starting spawn position after each pack spawn attempts.  
+This options works when either `fixedStart` or `fixedInChunk` is on.  
+This rule takes precedence over `startSpreadX`.  
+Defaults to 0.
+
+#### `/spawnforcer packOffsetZ {n}`
+
+Adds an offset n to the z coordinate to the starting spawn position after each pack spawn attempts.  
+This options works when either `fixedStart` or `fixedInChunk` is on.  
+This rule takes precedence over `startSpreadZ`.  
+Defaults to 0.
+
+- Example with `fixedInChunk true`, `jumpSequenceX 2`, `jumpSequenceZ 0`, `packOffsetX 0`, and `packOffsetZ 2`:
+![](images/pack-offset-example.png)
 
 ### Pack Spawning Jumps
 

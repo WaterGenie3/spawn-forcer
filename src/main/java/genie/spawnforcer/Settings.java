@@ -46,6 +46,12 @@ public class Settings {
     public static int startCoordsChunkZ = 0;
 
     @Rule(categories = {FEATURE, SPAWN_CYCLE})
+    public static int packOffsetX = 0;
+
+    @Rule(categories = {FEATURE, SPAWN_CYCLE})
+    public static int packOffsetZ = 0;
+
+    @Rule(categories = {FEATURE, SPAWN_CYCLE})
     public static boolean uniformJump = false;
 
     @Rule(categories = {FEATURE, SPAWN_CYCLE})

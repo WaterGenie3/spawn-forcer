@@ -13,6 +13,10 @@ import net.minecraft.server.world.ServerChunkManager;
 import net.minecraft.world.SpawnHelper;
 import net.minecraft.world.chunk.WorldChunk;
 
+/**
+ * When using fixedStart, this mixin limits the spawning chunk to just the chunk
+ * containing the startCoords.
+ */
 @Mixin(ServerChunkManager.class)
 public class ForcedStartChunk {
 
